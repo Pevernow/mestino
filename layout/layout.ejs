@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
-<%- include("partials/head.ejs") %>
-<body>
+  <%- include("partials/head.ejs") %>
+  <body>
+    <div id="menu" class="uk-background-primary">
+      <nav
+        class="uk-navbar-container uk-navbar-transparent uk-light uk-animation-toggle uk-animation-scale-down"
+        uk-navbar
+      >
+        <div class="space"></div>
+        <div class="uk-navbar-left">
+          <img src="/image/avator.jpg" width="50" height="50">
+          <ul class="uk-navbar-nav">
+            <% Object.keys(theme.menu).forEach(key => { %>
+            <li class="uk-text-emphasis">
+              <a href="<%=theme.menu[key]%>"><%=key%></a>
+            </li>
+            <% }); %>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <% if(config.search != undefined){%>
+          <a data-fancybox data-src="#site_search" href="javascript:;">
+              <!--It is a fake search-->
+              <div class="uk-background-muted uk-search uk-search-default"style="position:relative;left:-20%;border-radius: 25px;">
+              <input type="text" name="q" results="0" placeholder="search my blog..." class="uk-light uk-search-input"></input>
+              </div>
+          </a>
+          <div id="site_search" class="uk-search uk-search-default" style="display: none;width: 50%">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="biubiu..." class="uk-search-input" style="border-radius: 25px;"></input>
+            <div id="local-search-result"></div>
+            <div class="space"></div>
+          </div>
+          <% }%>
+        </div>
+      </nav>
+    </div>
+    <div id="content-outer">
+      <div id="content-inner">
+        <%- body %>
+      </div>
+    </div>
 
-<div id="menu-outer">
-  <div id="menu-inner">
-    <% Object.keys(theme.menu).forEach(key => { %>
-      <a href="<%=theme.menu[key]%>"><%=key%></a>
-    <% }); %>
-  </div>
-</div>
+    <div id="bottom-outer">
+      <div id="bottom-inner">
+        Site by <%=config.author%> using
+        <a href="http://hexo.io">hexo blog framework</a>.
+        <br />
+        <a href="<%=config.root%>">Home</a>
+      </div>
+    </div>
 
-<div id="content-outer">
-  <div id="content-inner">
-    <%- body %>
-  </div>
-</div>
-
-<div id="bottom-outer">
-  <div id="bottom-inner">
-    Site by <%=config.author%> using
-    <a href="http://hexo.io">hexo blog framework</a>.
-    <br>
-    <a href="<%=config.root%>">Home</a>
-  </div>
-</div>
-
-<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
-  <!-- scripts list from theme config.yml -->
-  <% theme.scripts.forEach(url => { %>
+    <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+    <!-- scripts list from theme config.yml -->
+    <% theme.scripts.forEach(url => { %>
     <script src="<%=url%>"></script>
-  <% }); %>
-<% } %>
-
-</body>
+    <% }); %> <% } %>
+  </body>
 </html>

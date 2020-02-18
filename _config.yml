@@ -16,3 +16,4 @@ stylesheets:
 # scripts loaded in the end of the body
 scripts:
 - /js/mestino.js
+
