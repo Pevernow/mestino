@@ -1,6 +1,44 @@
+<% var num=0;%>
+<section class="posts">
+  <% page.posts.each(function (post) { %>
+    <article class="post">
+    <%num+=1;%>
+    <%if(num%2==1){%>
+      <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+        <div class="uk-card-media-left uk-cover-container">
+            <img src="https://img.xjh.me/random_img.php?type=bg&ctype=acg&return=302" alt="" uk-cover>
+            <canvas width="600" height="400"></canvas>
+        </div>
+        <div>
+          <a class="post-title-link" href="<%- url_for(post.path) %>">
+            <div class="uk-card-body">
+                <h3 class="uk-card-title"><%= post.title %></h3>
+                <p><%- post.content %></p>
+                <div class="post-meta">
+                  <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+                </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    <% }else{%>
+      <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+        <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+            <img src="https://img.xjh.me/random_img.php?type=bg&ctype=acg&return=302" alt="" uk-cover>
+            <canvas width="600" height="400"></canvas>
+        </div>
+        <div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title"><%= post.title %></h3>
+                <p><%- post.content %></p>
+                <div class="post-meta">
+                  <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </article>
+    <% } %>
+  <% }) %>
+</section>
 
-<%-partial('partials/recent-posts')%>
-
-<div id="paginator">
-  <%-paginator()%>
-</div>
