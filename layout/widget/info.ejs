@@ -1,0 +1,17 @@
+<div class="uk-card uk-card-default uk-card-body uk-card-hover uk-card-small" style="border-radius: 5%;">
+    <div class="uk-card-media-top uk-padding-remove">
+        <img style="margin: 0 auto;" src="https://img.vim-cn.com/b0/9c45881ad163e90405b8141914d3c1939514e6.jpg" class="round_icon" alt="">
+    </div>
+    <h3 class="uk-card-title uk-text-center uk-padding-remove" style="margin-top: 0px;margin: 0px 0px 0px 0px"><%- config.author %></h3>
+    <h5 class="uk-text-center uk-padding-remove" style="margin-top: 0px;margin: 0px 0px 0px 0px"><%- config.author %></h5>
+    <div class="uk-column-1-3 uk-column-divider uk-padding-remove" style="column-gap: 0px;">
+        <p class="uk-text-lead uk-text-emphasis uk-text-nowrap uk-text-center">文章</p>
+        <p class="uk-text-lead uk-text-emphasis uk-text-nowrap uk-text-center">赞</p>
+        <p class="uk-text-lead uk-text-emphasis uk-text-nowrap uk-text-center">分类</p>
+    </div>
+    <div class="uk-column-1-3 uk-column-divider " style="column-gap: 0px;">
+        <p class="uk-text-center"><%-site.posts.length%></p>
+        <p class="uk-text-center">0</p>
+        <p class="uk-text-center"><%-site.categories.length%></p>
+    </div>
+</div>

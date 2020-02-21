@@ -1,9 +1,15 @@
-
-<article id="post">
-  <h1><%=page.title%></h1>
-  <%-page.content%>
-</article>
-
-<div id="paginator">
-  <%-paginator()%>
+<article class="post uk-flex uk-flex-center" style="position: relative;right: 20%;top: -10%">
+  <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-2-3">
+    <h3 class="uk-card-title">Default</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <div class="post-title">
+    <h2 class="title"><%= page.title %></h2>
+  </div>
+   <div class="post-meta">
+    <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+  </div>
+  <div class="post-content">
+    <%- page.content %>
+  </div>
 </div>
+</article>

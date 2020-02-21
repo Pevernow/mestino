@@ -17,3 +17,9 @@ stylesheets:
 scripts:
 - /js/mestino.js
 
+background: https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&random=<%- Math.random()%>
+
+sidebar:
+  info: 
+    a: a
+    

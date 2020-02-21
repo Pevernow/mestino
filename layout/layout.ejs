@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="<%=config.language%>">
+<html lang="<%= config.language %>">
   <%- include("partials/head.ejs") %>
-  <body>
+  <body background="<%- theme.background%>" style="background-attachment:fixed">
     <div id="menu" class="uk-background-primary">
       <nav
         class="uk-navbar-container uk-navbar-transparent uk-light uk-animation-toggle uk-animation-scale-down"
@@ -35,9 +35,10 @@
         </div>
       </nav>
     </div>
-    <%- include("index.ejs") %>
-    
-
+    <div uk-grid style="position: relative;left: 10%;top: 5%">
+    <%- body %>
+    <%- include("partials/sidebar.ejs") %>
+    </div>
     <div id="bottom-outer">
       <div id="bottom-inner">
         Site by <%=config.author%> using
