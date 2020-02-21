@@ -14,4 +14,13 @@
         <p class="uk-text-center">0</p>
         <p class="uk-text-center"><%-site.categories.length%></p>
     </div>
+    <div id="share" class="uk-flex uk-flex-center uk-flex-around">
+        <%Object.keys(theme.sidebar.info).forEach(key =>{%>
+            <a href="<%-theme.sidebar.info[key]%>">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-<%-key%>"></use>
+            </svg>
+            </a>
+        <%})%>
+    </div>
 </div>

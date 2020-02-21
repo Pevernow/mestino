@@ -7,7 +7,7 @@
     <%if(num%2==1){%>
       <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-card-hover" uk-grid style="border-radius: 25px;">
         <div class="uk-card-media-left uk-cover-container">
-            <img src="https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&random=<%- Math.random();%>" alt="" uk-cover style="height: 95%; width: 95%;">
+            <img src="https://api.ixiaowai.cn/api/api.php?random=<%- Math.random();%>" alt="" uk-cover style="height: 95%; width: 95%;">
             <canvas width="600" height="400"></canvas>
         </div>
         <div>
@@ -22,7 +22,7 @@
           </a>
         </div>
       </div>
-    <% }else{%>
+    <% }else if(num%2==0||num==2){%>
       <div class="uk-card uk-card-hover uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="border-radius: 25px;">
         <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
             <img style="" src="https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&random=<%- Math.random();%>" alt="" uk-cover>

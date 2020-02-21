@@ -17,9 +17,14 @@ stylesheets:
 scripts:
 - /js/mestino.js
 
-background: https://img.xjh.me/random_img.php?type=bg&ctype=nature&return=302&random=<%- Math.random()%>
-
+background: https://api.dujin.org/bing/1920.php
+#第一栏是组件,目前可选[info,music]
 sidebar:
   info: 
-    a: a
+    #可选qq,github,music,email,facebook,twitter,youtube,wechat。第二个参数为链接
+    qq: qq
+    github: https://github.com/wzy2006
+    email: "mailto:3450354617@qq.com"
+  music:
+
     

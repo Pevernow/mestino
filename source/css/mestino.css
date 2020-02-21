@@ -9,4 +9,11 @@ width: 5%
     align-items: center;
     justify-content: center;
     overflow: hidden;
-  }
+}
+.icon {
+   width: 3em;
+   height: 3em;
+   vertical-align: -0.45em;
+   fill: currentColor;
+   overflow: hidden;
+}
