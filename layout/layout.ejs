@@ -35,12 +35,13 @@
         </div>
       </nav>
     </div>
+    <canvas id="piao" style="position:fixed"></canvas>
     <div uk-grid style="position: relative;left: 10%;top: 5%">
     <%- body %>
     <%- include("partials/sidebar.ejs") %>
     </div>
     <div id="bottom-outer">
-      <div id="bottom-inner">
+      <div id="bottom-inner uk-flex-center">
         Site by <%=config.author%> using
         <a href="https://github.com/wzy2006/mestino">Mestino</a>.
         <br />

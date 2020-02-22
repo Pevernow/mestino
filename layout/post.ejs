@@ -1,7 +1,9 @@
 <div class="uk-width-3-5">
   <article class="uk-card uk-card-default uk-card-hover uk-card-body " style="position: relative;top: 1%;border-radius: 5%;">
     <h1><%= page.title %></h1>
-    <span class=""><%- date(page.date, "YYYY-MM-DD") %></span>
+    <span class="uk-label uk-label-success"><%- date(page.date, "YYYY-MM-DD") %></span>
+    <span class="uk-label uk-label-warning"><%- wordcount(page.content)%></span>
+    <span class="uk-label uk-label-danger"><%-min2read(page.content)%></span>
     <%- page.content %>
   </article>
   <div class="uk-card uk-card-default uk-card-body uk-card-hover" style="position: relative;top: 2%;border-radius: 10%;">

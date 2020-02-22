@@ -16,7 +16,7 @@ stylesheets:
 scripts:
 - /js/mestino.js
 
-background: https://api.dujin.org/bing/1920.php
+background: 
 #第一栏是组件,目前可选[info,music]
 sidebar:
   info: #可选qq,github,music,email,facebook,twitter,youtube,wechat。第二个参数为链接
