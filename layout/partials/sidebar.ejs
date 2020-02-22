@@ -1,5 +1,5 @@
 <div class="uk-width-1-3" style="position: relative;left: 1%;top: -20%">
-    <div class="uk-width-3-4">
+    <div class="uk-width-3-4" uk-grid>
     <% Object.keys(theme.sidebar).forEach(key =>{ %>
     <%- include("../widget/"+key+".ejs"); %>
     <% }); %>

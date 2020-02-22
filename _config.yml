@@ -1,4 +1,3 @@
-
 # html lang
 language: en
 
@@ -20,11 +19,32 @@ scripts:
 background: https://api.dujin.org/bing/1920.php
 #第一栏是组件,目前可选[info,music]
 sidebar:
-  info: 
-    #可选qq,github,music,email,facebook,twitter,youtube,wechat。第二个参数为链接
+  info: #可选qq,github,music,email,facebook,twitter,youtube,wechat。第二个参数为链接
     qq: qq
     github: https://github.com/wzy2006
     email: "mailto:3450354617@qq.com"
-  music:
+  music: #都可在文章开头定义
+    id: 4868229256 #歌id /播放列表id /相册id /搜索关键字（反正官网就是这么写的，不信自己看去)
+    server: netease #音乐平台: netease, tencent, kugou, xiami, baidu
+    type: playlist #song, playlist, album, search, artist
+    autoplay: false # 小学学历就应该看的懂了，不说了
+    theme: "#2980b9" #高级，自定义默认配色，没事别改，记得加引号
+    volume: 0.7 #音量，volume*100%就是音量大小的百分比了
+
+valine:
+  enable: true # 如果你想用Valine评论系统，请设置enable为true
+  volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
+  guest_info: nick,mail,link #valine comment header info
+  placeholder: biubiu~~ # valine comment input placeholder(like: Please leave your footprints )
+  avatar: mp # gravatar style https://valine.js.org/avatar
+  pageSize: 10 # comment list page size
+  verify: true # valine verify code (true/false)
+  notify: true # valine mail notify (true/false)
+  lang: zh-cn
+  highlight: true
+  app_id: AweNjIlaOQXlrkimpfUVSMu1-MdYXbMMI
+  app_key: HJ7hCb9aMO5DSJB3LLsgCN8K
+
+
 
     

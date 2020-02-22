@@ -1,15 +1,10 @@
-<article class="post uk-flex uk-flex-center" style="position: relative;right: 20%;top: -10%">
-  <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-2-3">
-    <h3 class="uk-card-title">Default</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-  <div class="post-title">
-    <h2 class="title"><%= page.title %></h2>
-  </div>
-   <div class="post-meta">
-    <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
-  </div>
-  <div class="post-content">
+<div class="uk-width-3-5">
+  <article class="uk-card uk-card-default uk-card-hover uk-card-body " style="position: relative;top: 1%;border-radius: 5%;">
+    <h1><%= page.title %></h1>
+    <span class=""><%- date(page.date, "YYYY-MM-DD") %></span>
     <%- page.content %>
+  </article>
+  <div class="uk-card uk-card-default uk-card-body uk-card-hover" style="position: relative;top: 2%;border-radius: 10%;">
+    <%- include("partials/comments.ejs") %>
   </div>
 </div>
-</article>
