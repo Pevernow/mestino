@@ -1,10 +1,24 @@
 <div class="uk-width-3-5">
   <article class="uk-card uk-card-default uk-card-hover uk-card-body " style="position: relative;top: 1%;border-radius: 5%;">
     <h1><%= page.title %></h1>
-    <span class="uk-label uk-label-success"><%- date(page.date, "YYYY-MM-DD") %></span>
-    <span class="uk-label uk-label-warning"><%- wordcount(page.content)%></span>
-    <span class="uk-label uk-label-danger"><%-min2read(page.content)%></span>
+    <span class="uk-label uk-label-success">
+      <svg class="sicon" aria-hidden="true">
+        <use xlink:href="#icon-date"></use>
+      </svg>
+      <%- date(page.date, "YYYY-MM-DD") %></span>
+    <span class="uk-label uk-label-warning">
+      <svg class="sicon" aria-hidden="true">
+        <use xlink:href="#icon-wordcount"></use>
+      </svg>
+      <%- wordcount(page.content)%></span>
+    <span class="uk-label uk-label-danger">
+      <svg class="sicon" aria-hidden="true">
+        <use xlink:href="#icon-time"></use>
+      </svg>
+      <%-min2read(page.content)%></span>
+    <div id="post">
     <%- page.content %>
+    </div>
   </article>
   <div class="uk-card uk-card-default uk-card-body uk-card-hover" style="position: relative;top: 2%;border-radius: 10%;">
     <%- include("partials/comments.ejs") %>

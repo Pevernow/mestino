@@ -30,6 +30,7 @@ sidebar:
     autoplay: false # 小学学历就应该看的懂了，不说了
     theme: "#2980b9" #高级，自定义默认配色，没事别改，记得加引号
     volume: 0.7 #音量，volume*100%就是音量大小的百分比了
+  menu:
 
 valine:
   enable: true # 如果你想用Valine评论系统，请设置enable为true
