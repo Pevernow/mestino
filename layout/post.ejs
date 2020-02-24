@@ -11,11 +11,18 @@
         <use xlink:href="#icon-wordcount"></use>
       </svg>
       <%- wordcount(page.content)%></span>
-    <span class="uk-label uk-label-danger">
+    <span class="uk-label uk-label-danger uk-text-lowercase">
       <svg class="sicon" aria-hidden="true">
         <use xlink:href="#icon-time"></use>
       </svg>
-      <%-min2read(page.content)%></span>
+
+      <%if(min2read(page.content)!=1){%>
+      <%-min2read(page.content)%>
+      <%}else{%>
+        &lt;1
+        <%}%>
+      min
+    </span>
     <div id="post">
     <%- page.content %>
     </div>

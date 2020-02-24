@@ -1,4 +1,16 @@
+<%if(path.indexOf("posts")!=-1){%>
 <div class="uk-card uk-card-default uk-card-body uk-card-hover " style="border-radius: 5%;">
+    <span class="uk-label uk-label-warning">
+        <svg class="sicon" aria-hidden="true">
+          <use xlink:href="#icon-wordcount"></use>
+        </svg>
+        <%- wordcount(page.content)%></span>
+      <span class="uk-label uk-label-danger uk-text-lowercase">
+        <svg class="sicon" aria-hidden="true">
+          <use xlink:href="#icon-time"></use>
+        </svg>
+        <nobr id="lasttime"><%-min2read(page.content)%></nobr> min
+      </span>
 <div id="toc"></div>
 </div>
 <script>
@@ -71,3 +83,4 @@ function showArticleIndex() {
 }
 showArticleIndex();
 </script>
+<%}%>

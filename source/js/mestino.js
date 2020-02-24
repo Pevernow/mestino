@@ -41,7 +41,24 @@ $(document).ready(function(){
         var t = p + (z()*2-1.1)*f
         return (t>h||t<0) ? y(p) : t
     }
-    document.onclick = i
-    document.ontouchstart = i
-    i()
+    document.onclick = i;
+    document.ontouchstart = i;
+    i();
   });
+$(document).ready(function(){
+    if($("#lasttime").text()=="1") {
+        $("#lasttime").text("<"+$("#lasttime").text());
+        window.clearInterval();
+        return;
+    }
+    setInterval(function(){
+        $("#lasttime").text($("#lasttime").text()-1);
+        if($("#lasttime").text()=="1") {
+            $("#lasttime").text("<"+$("#lasttime").text());
+            window.clearInterval();
+            return;
+        }
+    },60000);
+})
+
+        

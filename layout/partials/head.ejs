@@ -10,6 +10,8 @@ pageTitle += ' [ ' + config.title + ' ]';
 <head>
     <meta charset="UTF-8">
     <title><%=pageTitle%></title>
+    <!--mestino配置转移-->
+    <link rel="stylesheet" type="text/css" href="https://www.17sucai.com/preview/869565/2017-11-14/cssLoad/css/normalize.css"y>
     <% if (theme.stylesheets != undefined && theme.stylesheets.length > 0) { %>
       <!-- stylesheets list from _config.yml -->
       <% theme.stylesheets.forEach(url => { %>
@@ -19,29 +21,58 @@ pageTitle += ' [ ' + config.title + ' ]';
     <link rel="stylesheet" href="https://cdn.staticfile.org/uikit/3.3.1/css/uikit.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css">
-    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/uikit/3.3.1/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
-    <script src="/js/mestino.js" async="async"></script>
-    <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" async="async"></script>
-    <script src="//at.alicdn.com/t/font_1643892_jw8nu9s6g2.js" async="async"></script>
-    <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script type="text/javascript" color="220,220,220" opacity='0.7' zIndex="0" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js" async="async"></script>
-    <!--本地搜索-->
-    <script src="/js/FunnyTitle.js" async="async"></script>
-    <% if(config.search != undefined){%>
-    <script src="/js/search.js"></script>
-    <script type="text/javascript"> 
-      var search_path = "<%= config.search.path %>";
-      if (search_path.length == 0) {
-        search_path = "search.xml";
-      }
-      var path = "<%= config.root %>" + search_path;
-      searchFunc(path, 'local-search-input', 'local-search-result');
-    </script>
-    <% }%>
-    <!--mestino配置转移-->
 </head>
+<body background="<%- theme.background%>" style="background-attachment:fixed"></body>
+<script>
+  const SETTINGS = {
+    rebound: {
+      tension: 16,
+      friction: 3
+    },
+    spinner: {
+      id: 'spinner',
+      radius: 90,
+      sides: 3,
+      depth: 5,
+      colors: {
+        //background: '#231E76',
+        //stroke: '#231E76',
+        background: '#f0f0f0',
+        stroke: '#272633',
+        base: null,
+        child: '#272633'
+      },
+      alwaysForward: true, // When false the spring will reverse normally.
+      restAt: 0.5, // A number from 0.1 to 0.9 || null for full rotation
+      renderBase: false
+    }
+  };
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+  demo.init();
+  </script>
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/uikit/3.3.1/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1.0/js/volantis.min.js"></script>
+<script src="/js/mestino.js" async="async"></script>
+<script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" async="async"></script>
+<script src="//at.alicdn.com/t/font_1643892_jw8nu9s6g2.js" async="async"></script>
+<script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+<script type="text/javascript" color="220,220,220" opacity='0.7' zIndex="-5" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js" async="async"></script>
+<!--本地搜索-->
+<script src="/js/FunnyTitle.js" async="async"></script>
+<% if(config.search != undefined){%>
+<script src="/js/search.js"></script>
+<script type="text/javascript"> 
+  var search_path = "<%= config.search.path %>";
+  if (search_path.length == 0) {
+    search_path = "search.xml";
+  }
+  var path = "<%= config.root %>" + search_path;
+  searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+<% }%>
